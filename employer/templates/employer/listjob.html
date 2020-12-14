@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>listjobs</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        {% for job in my_job %}
+        <div class="col-3">
+            <div class="card" style="width: 18rem;">
+                <div class="card-header"><h1>{{job.company_name}}</h1></div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">{{job.job_role}}</li>
+                <li class="list-group-item"><h6>skills required:</h6> {{job.skills}}</li>
+                <li class="list-group-item"><h6>experience(years):</h6>{{job.experience}}</li>
+                <li class="list-group-item"><h6>location:</h6>{{job.location}}</li>
+            </ul>
+                <div class="card-body">
+    <a class="btn btn-primary" href="{% url 'deletejob' job.id %}" role="button">Delete</a>
+  </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</body>
+</html>

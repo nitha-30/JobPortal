@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="row">
+<div class="col-md">
+    <div class="card card-body">
+        <h5>Jobs</h5>
+    </div>
+    <div class="card card-body">
+        <table class="table">
+            <tr>
+                <th>COMPANY NAME</th>
+                <th>JOB ROLE</th>
+                <th>SKILLS</th>
+                <th>EXPERIENCE</th>
+                <th>LOCATION</th>
+            </tr>
+
+            {% for job in alljobs %}
+                <tr>
+                    <td>{{job.company_name}}</td>
+                    <td>{{job.job_role}}</td>
+                    <td>{{job.skills}}</td>
+                    <td>{{job.experience}}</td>
+                    <td>{{job.location}}</td>
+                </tr>
+            {% endfor %}
+
+        </table>
+    </div>
+</div>
+</div>
+
+</body>
+</html>
